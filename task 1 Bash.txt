@@ -1,0 +1,120 @@
+	
+1)	###Определить имя папки, в которой вы находитесь###
+	
+	mrholygoose@DESKTOP-KJDQVH3:~$ pwd
+	/home/mrholygoose
+	
+2)	###Создать папку с именем test1###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ mkdir test1
+	
+3)	###Перейти в папку test1###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ cd ~/test1
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$
+	
+4)	###Создать файл 1,2 и 3 внутри каталога test1###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$ touch file1.txt file2.txt file3.txt
+	
+5)	###Проверить содержимое каталога test1###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$ ls
+	file1.txt  file2.txt  file3.txt
+	
+6)	###Создать папку test2 внутри домашней директории###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$ cd ~/
+	mrholygoose@DESKTOP-KJDQVH3:~$ mkdir test2
+	mrholygoose@DESKTOP-KJDQVH3:~$
+	
+7)	###Удалить папку test2###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ rmdir test2
+	
+8)	###Удалить файл 2###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ cd test1
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$ rm file2.txt
+	
+9)	###Создать папку test3 и добавить в нее два файла###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test1$ cd ~/
+	mrholygoose@DESKTOP-KJDQVH3:~$ mkdir test3
+	mrholygoose@DESKTOP-KJDQVH3:~$ cd test3
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ touch file1.txt file2.txt
+	
+10)	###Удалить папку test3###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ cd ~/
+	mrholygoose@DESKTOP-KJDQVH3:~$ rm -R test3
+	
+11)	###Создать папку test4###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ mkdir test4
+	
+12)	###Переместить файлы 1 и 3 в папку test4###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ mv test1/file1.txt test4/file1.txt
+	mrholygoose@DESKTOP-KJDQVH3:~$ mv test1/file3.txt test4/file3.txt
+	
+13)	###Добавить в файл 1 три строки со словами line###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ cd test4
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line > file1.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line >> file1.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line >> file1.txt
+	
+14)	###Посмотреть содержимое файла 1###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ cat file1.txt
+	line
+	line
+	line
+	
+15)	###Добавьте в файл 3 три строки со словами line###
+	
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line > file3.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line >> file3.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ echo line >> file3.txt
+
+16)	###Просмотрите содержимое двух файлов (1 и 3) сразу###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ cat file1.txt file3.txt
+	line
+	line
+	line
+	line
+	line
+	line
+	
+17)	###Используя один из редакторов замените все строки###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test4$ nano file1.txt
+	ctrl+x
+	ctrl+Y
+	Enter
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
