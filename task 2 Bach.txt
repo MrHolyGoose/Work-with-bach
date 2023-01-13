@@ -1,0 +1,118 @@
+
+1)	###Создать папку test 3###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ mkdir test3
+	
+2)	###Добавить в него три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ touch file4.txt file5.txt file6.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row1 > file4.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row2 >> file4.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row3 >> file4.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row4 >> file4.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row1 > file5.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row2 >> file5.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row3 >> file5.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row4 >> file5.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row1 > file6.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row2 >> file6.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row3 >> file6.txt
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo row4 >> file6.txt
+	
+3)	###Найдите строку row2 в файле 5###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ cat file5.txt | grep row2
+	row2
+	
+4)	###Найдите строку row в папке test3###
+	
+	mrholygoose@DESKTOP-KJDQVH3:~$ grep -R row test3
+	test3/file4.txt:row1
+	test3/file4.txt:row2
+	test3/file4.txt:row3
+	test3/file4.txt:row4
+	test3/file5.txt:row1
+	test3/file5.txt:row2
+	test3/file5.txt:row3
+	test3/file5.txt:row4
+	test3/file6.txt:row1
+	test3/file6.txt:row2
+	test3/file6.txt:row3
+	test3/file6.txt:row4
+	
+5)	###Посчитайте сколько строк с содержимым row в файле 6###
+
+	mrholygoose@DESKTOP-KJDQVH3:~$ cd test3
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ grep -c row file6.txt
+	4
+	
+6)	###Найдите файл 5 внутри папки test3###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ cd ~/
+	mrholygoose@DESKTOP-KJDQVH3:~$ find . -name file5.txt
+	./test3/file5.txt
+	
+7)	###Используя команду find, удалите файл 5###
+	
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ find -name file5.txt -delete -print
+	./file5.txt
+	
+8)	###Используя команду echo, добавьте слово test в файл 4###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo test > file4.txt
+	
+9)	###Замените слово test в файле 4 на fail###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ nano file4.txt
+	ctrl+x
+	ctrl+Y
+	Enter
+	
+10)	###Добавьте в файл 4 слово test так, чтобы сохранилось содержимое###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ echo test >> file4.txt
+	
+11)	###Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ ps aux
+	USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+	root         1  0.0  0.0   8960   412 ?        Ssl  14:54   0:00 /init
+	root         9  0.0  0.0   9308   232 tty1     Ss   14:54   0:00 /init
+	mrholyg+    10  0.0  0.0  14116  3776 tty1     S    14:54   0:00 -bash
+	mrholyg+    44  0.0  0.0  15520  1924 tty1     R    15:34   0:00 ps aux
+	
+12)	###Убейте процесс 666 в консоли###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ kill 666
+	-bash: kill: (666) - No such process
+	
+13)	###Узнайте доступность ресурса artsiomrusau.com, используя ping###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ ping artsiomrusau.com
+	PING artsiomrusau.com (185.215.4.92) 56(84) bytes of data.
+	^C
+	--- artsiomrusau.com ping statistics ---
+	3 packets transmitted, 0 received, 100% packet loss, time 2009ms
+	
+14)	###Отправьте 5 пакетов на сайт artsiomrusau.com###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ ping -c 5 artsiomrusau.com
+	PING artsiomrusau.com (185.215.4.92) 56(84) bytes of data.
+
+	--- artsiomrusau.com ping statistics ---
+	5 packets transmitted, 0 received, 100% packet loss, time 4018ms
+	
+15)	###Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ curl https://petstore.swagger.io/v2/pet/findByStatus?status=available
+	
+	Выдаст список с информацией о зарегистрированных пользователей
+	[{"id":9223372036854650907,"name":"doggie","photoUrls":[],"tags":[],"status":"available"},{"id":9223372036854650908,"name":"doggie","photoUrls":[],"tags":[],"status":"available"}
+	
+16) ###Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/###
+
+	mrholygoose@DESKTOP-KJDQVH3:~/test3$ curl https://petstore.swagger.io/v2/user
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiResponse><type>unknown</type></apiResponse>mrholygoose@DESKTOP-
+
+
+
